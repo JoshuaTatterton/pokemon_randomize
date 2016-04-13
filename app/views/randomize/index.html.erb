@@ -1,0 +1,18 @@
+<% @players.times do | player_num |%>
+
+  <div id="player_<%= player_num + 1 %>">
+
+    Player <%= player_num + 1 %>:
+
+    <% @pokemon.times do | poke_num | %>
+
+      <div id="pokemon_<%= poke_num + 1 %>">
+        <div class="image"></div>
+        <button>Roll</button>
+      </div>
+
+    <% end %>
+
+  </div>
+
+<% end %>
