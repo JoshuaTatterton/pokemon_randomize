@@ -5,13 +5,43 @@ $(document).ready( function() {
     var player = id[0];
     var pokemon = id[1];
 
-    rand = Math.floor((Math.random() * 721) + 1);
-
-    var img = $("<img />").attr("src", ("assets/<%= asset_path('/pokemon/"+ rand +".png') %>") );
-
-    $(".image#" + id).html(img);
-
     $(this).hide();
+
+    for (i=1; i<20; i++) {
+      var wait
+
+      wait = ( (Math.pow(i, 2) * (5 / 380)) - (0.0131578947 * i) ) * 1000
+        
+      setTimeout( function() {
+        rand = (Math.floor((Math.random() * 721) + 1));
+        
+
+        if (rand < 10) {
+          rand = "00" + rand;
+        } else if (rand < 100) {
+          rand = "0" + rand;
+        }
+        
+        var img = $("<img />").attr("src", ("assets/<%= asset_path('/pokemon/"+ rand +".png') %>") );
+
+        $(".image#" + id).html(img);
+
+      }, wait);
+
+    }
+    
   });
+
+
+
+
+  function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
+      }
+    }
+  }
 
 });

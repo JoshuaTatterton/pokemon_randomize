@@ -1,3 +1,62 @@
 // Place all the styles related to the options controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-size: 1em;
+  background: image-url("stadium.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 2.5% 10% 5% 10%;
+  text-align: center;
+}
+
+.trainer {
+  float: left;
+  display: inline-block;
+  text-align:left;
+  heigth: 5em;
+}
+.trainer:nth-child(2n) {
+  float: right;
+  text-align: right;
+}
+
+.name {
+  font-size: 2em;
+  font-weight: bold;  
+}
+
+.pokecontainer {
+  display: inline-block;
+  width: 23em;
+  height: auto;
+}
+
+.pokemon {
+  display: inline-block;
+  background: white;
+  height: 9em;
+  text-align: center;
+  vertical-align: top;
+}
+
+.image {
+  border: solid black;
+  display: block;
+  background-color: white;
+  height: 7em;
+  width: 7em
+}
+
+img {
+  width: 7em;
+  height: 7em;
+}
+
+.button {
+  display: block;
+  height: 1em;
+}

@@ -13,7 +13,7 @@ feature "Roulette" do
       
       expect(page).to have_css "#player_1"
       within "#player_1" do
-        expect(page).to have_content "Player 1:"
+        expect(page).to have_content "Trainer 1:"
         expect(page).to have_css "#pokemon_1"
         expect(page).to have_button "Roll"
       end
@@ -28,7 +28,7 @@ feature "Roulette" do
         expect(page).to have_css "#player_#{num + 1}"
 
         within "#player_#{num + 1}" do
-          expect(page).to have_content "Player #{num + 1}:"
+          expect(page).to have_content "Trainer #{num + 1}:"
 
           6.times do |num2|
 
@@ -56,6 +56,29 @@ feature "Roulette" do
 
         expect(page).to have_css "img"
         expect(page).not_to have_button "Roll"
+      end
+    end
+  end
+
+  scenario "if nothing is entered in form it defaults to 4 trainers 3 pokemon each" do
+    click_button "Randomize"
+
+    4.times do |num|
+      expect(page).to have_css "#player_#{num + 1}"
+
+      within "#player_#{num + 1}" do
+        expect(page).to have_content "Trainer #{num + 1}:"
+
+        6.times do |num2|
+          if num2 <= 2
+            within "#pokemon_#{num2 + 1}" do
+              expect(page).to have_css ".image"
+              expect(page).to have_button "Roll"
+            end
+          else
+            expect(page).not_to have_css "#pokemon_#{num2 + 1}"
+          end
+        end
       end
     end
   end
