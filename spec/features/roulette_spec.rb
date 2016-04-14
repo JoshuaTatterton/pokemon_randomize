@@ -42,4 +42,21 @@ feature "Roulette" do
     end
 
   end
+
+  scenario "user can roll a players pokemon", js: true do
+    choose "people_1"
+    choose "pokemon_1"
+    click_button "Randomize"
+
+    within "#player_1" do
+      within "#pokemon_1" do
+        expect(page).not_to have_css "img"
+
+        click_button "Roll"
+
+        expect(page).to have_css "img"
+        expect(page).not_to have_button "Roll"
+      end
+    end
+  end
 end

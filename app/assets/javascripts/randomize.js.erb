@@ -1,0 +1,17 @@
+$(document).ready( function() {
+
+  $(".roll").click(function() {
+    var id = $(this).attr("id");
+    var player = id[0];
+    var pokemon = id[1];
+
+    rand = Math.floor((Math.random() * 721) + 1);
+
+    var img = $("<img />").attr("src", ("assets/<%= asset_path('/pokemon/"+ rand +".png') %>") );
+
+    $(".image#" + id).html(img);
+
+    $(this).hide();
+  });
+
+});

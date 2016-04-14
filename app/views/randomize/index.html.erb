@@ -7,8 +7,8 @@
     <% @pokemon.times do | poke_num | %>
 
       <div id="pokemon_<%= poke_num + 1 %>">
-        <div class="image"></div>
-        <button>Roll</button>
+        <div class="image" id="<%= player_num %><%= poke_num %>"></div>
+        <button class="roll" id="<%= player_num %><%= poke_num %>">Roll</button>
       </div>
 
     <% end %>
