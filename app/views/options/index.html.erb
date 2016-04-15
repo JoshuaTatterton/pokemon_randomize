@@ -1,33 +1,35 @@
-<%= form_tag randomize_path, method: "GET" do %>
-  
-  How many players are getting randomized:
-  <div>
-    <%= label_tag :"1" %>:
-    <%= radio_button_tag :people, "1" %>
-    <%= label_tag :"2" %>:
-    <%= radio_button_tag :people, "2" %>
-    <%= label_tag :"3" %>:
-    <%= radio_button_tag :people, "3" %>
-    <%= label_tag :"4" %>:
-    <%= radio_button_tag :people, "4" %>
-  </div>
-  
-  How many Pokemon does each player want:
-  <div>
-    <%= label_tag :"1" %>:
-    <%= radio_button_tag :pokemon, "1" %>
-    <%= label_tag :"2" %>:
-    <%= radio_button_tag :pokemon, "2" %>
-    <%= label_tag :"3" %>:
-    <%= radio_button_tag :pokemon, "3" %>
-    <%= label_tag :"4" %>:
-    <%= radio_button_tag :pokemon, "4" %>
-    <%= label_tag :"5" %>:
-    <%= radio_button_tag :pokemon, "5" %>
-    <%= label_tag :"6" %>:
-    <%= radio_button_tag :pokemon, "6" %>
-  </div>
+<div class="options">
+  <%= form_tag randomize_path, method: "GET" do %>
+    
+    How many players are getting randomized:
+    <div>
+      <%= label_tag :"1" %>:
+      <%= radio_button_tag :people, "1" %>
+      <%= label_tag :"2" %>:
+      <%= radio_button_tag :people, "2" %>
+      <%= label_tag :"3" %>:
+      <%= radio_button_tag :people, "3" %>
+      <%= label_tag :"4" %>:
+      <%= radio_button_tag :people, "4" %>
+    </div>
+    
+    How many Pokemon does each player want:
+    <div>
+      <%= label_tag :"1" %>:
+      <%= radio_button_tag :pokemon, "1" %>
+      <%= label_tag :"2" %>:
+      <%= radio_button_tag :pokemon, "2" %>
+      <%= label_tag :"3" %>:
+      <%= radio_button_tag :pokemon, "3" %>
+      <%= label_tag :"4" %>:
+      <%= radio_button_tag :pokemon, "4" %>
+      <%= label_tag :"5" %>:
+      <%= radio_button_tag :pokemon, "5" %>
+      <%= label_tag :"6" %>:
+      <%= radio_button_tag :pokemon, "6" %>
+    </div>
 
-  <%= submit_tag "Randomize" %>
+    <%= submit_tag "Randomize" %>
 
-<% end %>
+  <% end %>
+</div>
