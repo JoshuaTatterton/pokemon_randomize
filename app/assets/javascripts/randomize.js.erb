@@ -4,11 +4,13 @@ $(document).ready( function() {
     var id = $(this).attr("id");
     var player = id[0];
     var pokemon = id[1];
+    var images;
 
     $(this).hide();
 
     for (i=1; i<20; i++) {
       var wait
+      var bucket = $("#bucket").val();
 
       wait = ( (Math.pow(i, 2) * (5 / 380)) - (0.0131578947 * i) ) * 1000
         
@@ -22,7 +24,7 @@ $(document).ready( function() {
           rand = "0" + rand;
         }
         
-        var img = $("<img />").attr("src", ("assets/<%= asset_path('/pokemon/"+ rand +".png') %>") );
+        var img = $("<img />").attr("src", ("https://"+ bucket +".s3.amazonaws.com/"+ rand +".png") );
 
         $(".image#" + id).html(img);
 
