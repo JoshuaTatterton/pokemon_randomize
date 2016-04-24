@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   get "options" => "options#index"
   post "randomize" => "randomize#index"
-  
+  get "randomize/:pokemon" => "randomize#show"
 end

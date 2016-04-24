@@ -4,11 +4,11 @@ $(document).ready( function() {
     var id = $(this).attr("id");
     var player = id[0];
     var pokemon = id[1];
-    var images;
+    var image;
 
     $(this).hide();
 
-    for (i=5; i<20; i++) {
+    for (i=1; i<20; i++) {
       var wait = ( (Math.pow(i, 2) * (5 / 380)) - (0.0131578947 * i) ) * 1000;
         
       setTimeout( function() {
@@ -20,27 +20,18 @@ $(document).ready( function() {
         } else if (rand < 100) {
           rand = "0" + rand;
         }
-        
-        var img = $("<img />").attr("src", ("assets<%= asset_path('pokemon/"+ rand +".png') %>"));
 
-        $(".image#" + id).html(img);
+        $.get("randomize/"+rand, function(data) {
+          var img = $("<img />").attr("src", data.pokemon);
+
+          $(".image#" + id).html(img);
+        });
+        
 
       }, wait);
 
     }
     
   });
-
-
-
-
-  function sleep(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-      if ((new Date().getTime() - start) > milliseconds){
-        break;
-      }
-    }
-  }
 
 });

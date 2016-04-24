@@ -8,6 +8,12 @@ class RandomizeController < ApplicationController
     pokemonset
   end
 
+  def show
+    render json: {
+      pokemon: ActionController::Base.helpers.asset_path("pokemon/#{params[:pokemon]}")
+    }
+  end
+
   private
 
   def playerset
