@@ -8,11 +8,8 @@ $(document).ready( function() {
 
     $(this).hide();
 
-    for (i=1; i<20; i++) {
-      var wait
-      var bucket = $("#bucket").val();
-
-      wait = ( (Math.pow(i, 2) * (5 / 380)) - (0.0131578947 * i) ) * 1000
+    for (i=5; i<20; i++) {
+      var wait = ( (Math.pow(i, 2) * (5 / 380)) - (0.0131578947 * i) ) * 1000;
         
       setTimeout( function() {
         rand = (Math.floor((Math.random() * 721) + 1));
@@ -24,7 +21,7 @@ $(document).ready( function() {
           rand = "0" + rand;
         }
         
-        var img = $("<img />").attr("src", ("https://"+ bucket +".s3.amazonaws.com/"+ rand +".png") );
+        var img = $("<img />").attr("src", ("assets/<%= asset_path('pokemon/"+ rand +".png') %>"));
 
         $(".image#" + id).html(img);
 
