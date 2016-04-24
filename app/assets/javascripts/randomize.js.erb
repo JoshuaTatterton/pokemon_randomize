@@ -21,7 +21,7 @@ $(document).ready( function() {
           rand = "0" + rand;
         }
         
-        var img = $("<img />").attr("src", ("assets/<%= asset_path('pokemon/"+ rand +".png') %>"));
+        var img = $("<img />").attr("src", ("assets<%= asset_path('pokemon/"+ rand +".png') %>"));
 
         $(".image#" + id).html(img);
 
